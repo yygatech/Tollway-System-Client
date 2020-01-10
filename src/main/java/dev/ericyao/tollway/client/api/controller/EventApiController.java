@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import dev.ericyao.tollway.client.entity.Event;
-import dev.ericyao.tollway.client.entity.Transaction;
-import dev.ericyao.tollway.client.entity.Vehicle;
+import dev.ericyao.tollway.client.object.Event;
+import dev.ericyao.tollway.client.object.Transaction;
+import dev.ericyao.tollway.client.object.Vehicle;
 
 @RestController
 public class EventApiController {
@@ -43,6 +43,6 @@ public class EventApiController {
 		
 		Transaction trans = restTemplate.exchange(tollwayServerUrl, HttpMethod.POST, entity, Transaction.class).getBody();
 	
-		System.out.println("Receive transaction: " + trans.toString());
+		System.out.println("Transaction saved: " + trans.toString());
 	}
 }
